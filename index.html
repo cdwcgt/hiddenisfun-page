@@ -1,12 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-    <meta charset="utf-8" name="Hidden is fun", content="The website which about hidden is fun in osu!, maintain by cdwcgt.">
-    <title>Redirecting to osu!</title>
-    <link rel="canonical" href="https://osu.ppy.sh/users/10449071">
-    <meta http-equiv="refresh" content="0"; url="https://osu.ppy.sh/users/10449071">
+        <meta charset="utf-8">
+        <meta name="keywords"
+              content="hidden, is, fun, osu, taiko, mania, beatmap, nominator, std, standard, catch">
+        <meta name="description" content="Who is Hidden is fun">
+        <meta name="author" content="cdwcgt">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="static/css/hidden.css">
+        <title>Home - Hidden is fun</title>
     </head>
-    <script>
-        location="https://osu.ppy.sh/users/10449071";
-    </script>
+    <body>
+        <nav class="navbar">
+            <input type="checkbox" id="nav-check" placeholder="nav" />
+            <label for="nav-check" class="nav-toggle-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                    <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+                </svg>
+            </label>
+            <div id="nav-mask"></div>
+            <div class="nav-content">
+                <ul>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#news">News</a>
+                    </li>
+                    <li>
+                        <a href="#gacha">Gacha</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="blur-bg" id="showcase-container">
+                <div class="card-information">
+                    全新Hidden系列卡池震撼上线
+                    <br>
+                    <br>
+                    限定5星 (5/18/2024~12/31/2999)
+                </div>
+                <img class="active"
+                     src="static/assets/gacha/5/0.jpg"
+                     alt="Our beloved Hidden!"
+                     height="auto"
+                     width="300px" />
+            </div>
+            <div id="about">
+                <div class="profile-intro">
+                    <div class="profile-header">
+                        <img src="https://q1.qlogo.cn/g?b=qq&nk=1444054165&s=640"
+                             alt="Avatar"
+                             height="100px"
+                             width="100px" />
+                        <div class="profile-name">Hidden is fun</div>
+                    </div>
+                    Hidden is fun (Hidden for short), a Beatmap Nominator in osu!mania, is well-known as a tiny and delicate internet pet.
+                    <br>
+                    <br>
+                    Please be carefull because she? is still a virgin...?
+                    <br>
+                    <br>
+                    And yes, she? is an absolutely cool person on the internet. You will love the time with her? and value the friendship.
+                </div>
+                <div class="related-info">
+                    <span>QQ: 1444054165</span>
+                    <a href="https://osu.ppy.sh/users/10449071" target="_blank">osu! Page</a>
+                    <a href="https://x.com/hiddenisfun" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div id="news" class="fancy-scrollbar">
+                <h1>News</h1>
+                <ul>
+                    <li class="news-item" id="news0522">Hidden is fun web is AWAKEN!!!!!!</li>
+                    <li class="news-item" id="news9999"></li>
+
+                </ul>
+                <div id="news-detail">
+                    <div class="news-title"></div>
+                    <div class="news-date"></div>
+                    <div class="news-message"></div>
+                </div>
+                <div id="news-mask"></div>
+            </div>
+            <div id="gacha">
+                <div class="gacha-panel">
+                    <div id="gacha-info"></div>
+                    <div class="hidden" id="gacha-result">
+                        <div id="gacha-actions">
+                            <div id="gacha-continue">Continue</div>
+                            <div id="gacha-skip">Skip</div>
+                        </div>
+                        <div id="gacha-items"></div>
+                    </div>
+                </div>
+                <div class="gacha-buttons">
+                    <div class="button-type" id="one-gacha">抽一次</div>
+                    <div class="button-type" id="ten-gacha">抽十次</div>
+                </div>
+            </div>
+        </div>
+        <script src="static/js/cards.js"></script>
+        <script src="static/js/hidden.js"></script>
+    </body>
 </html>

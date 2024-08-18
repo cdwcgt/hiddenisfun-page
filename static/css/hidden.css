@@ -1,0 +1,409 @@
+@keyframes nav-fly-in {
+  from {
+    opacity: 0;
+    transform: translateX(-75%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+* {
+  cursor: default;
+}
+
+body {
+  margin: 0;
+  background-color: lightpink;
+  min-width: 280px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.5s;
+  color: black;
+}
+
+a:hover {
+  color: lightpink;
+  cursor: pointer;
+  transition: color 0.5s linear;
+}
+
+.fancy-scrollbar {
+  scrollbar-color: hsla(0, 0%, 100%, 0.5) hsla(0, 0%, 100%, 0.025);
+  scrollbar-width: thin;
+}
+
+.button-type {
+  display: inline-block;
+  margin: auto;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 80px;
+  height: 30px;
+  background-color: lightblue;
+  color: black;
+  text-align: center;
+  padding: 1px 6px;
+  line-height: 30px;
+  cursor: default;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container {
+  width: 100%;
+  margin-top: 50px;
+  min-height: 100vh;
+}
+
+.navbar {
+  min-width: 280px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: lightblue;
+  z-index: 997;
+}
+
+#nav-check {
+  display: none;
+}
+
+#nav-check + label svg path {
+  fill: black;
+  transition: all 0.5s linear;
+}
+
+@media (max-width: 899px) {
+  #nav-check {
+    position: fixed;
+    top: 12.5px;
+    right: 30px;
+  }
+
+  #nav-check + label {
+    display: block;
+    position: fixed;
+    top: 12.5px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: 1s all;
+  }
+
+  #nav-check + label:hover {
+    font-size: 17px;
+    transition: 1s all;
+  }
+
+  #nav-check:checked + label {
+    font-size: 18px;
+    transition: 1s all;
+  }
+
+  #nav-check:checked + label svg path {
+    fill: white;
+    transition: all 0.5s linear;
+  }
+
+  #nav-toggle-icon svg {
+    width: 2em;
+    height: 2em;
+  }
+
+  .nav-content {
+    display: none;
+  }
+
+  #nav-check:checked ~ .nav-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: lightblue;
+    animation-name: nav-fly-in;
+    animation-duration: 0.5s;
+    z-index: 999;
+  }
+
+  #nav-check:checked ~ #nav-mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 998;
+  }
+
+  .nav-content ul {
+    display: block;
+    margin: auto 0;
+    padding: 0;
+    width: 200px;
+  }
+
+  .nav-content ul li {
+    display: block;
+    height: 50px;
+    margin: auto 10px;
+    text-align: center;
+  }
+
+  .nav-content ul li a {
+    line-height: 50px;
+    white-space: nowrap;
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-toggle-icon {
+    display: none;
+  }
+
+  #nav-mask {
+    display: none;
+  }
+
+  .navbar .nav-content {
+    display: block;
+    margin-right: auto;
+  }
+
+  .navbar .nav-content ul {
+    display: inline-block;
+    margin: auto 0;
+  }
+
+  .navbar .nav-content ul li {
+    display: inline-block;
+    margin-right: 20px;
+    height: 50px;
+  }
+
+  .navbar li a {
+    line-height: 50px;
+    white-space: nowrap;
+    font-size: 20px;
+  }
+}
+
+#showcase-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  height: 100dvh;
+  flex-wrap: wrap;
+}
+
+.blur-bg::before {
+  width: inherit;
+  height: 100dvh;
+  content: "";
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-image: url("../assets/01.jpg");
+  filter: blur(5px);
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.card-information {
+  text-align: center;
+  font-size: 25px;
+  color: lightblue;
+  text-shadow: 2px 2px 3px blue;
+  margin: 10px;
+}
+
+#showcase-container img {
+  width: auto;
+  height: 50%;
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+  border-radius: 10px;
+}
+#showcase-container img.active {
+  opacity: 1;
+}
+
+#about,
+#news,
+#gacha {
+  width: 75%;
+  min-height: 500px;
+  border-radius: 10px;
+  margin: 50px auto;
+  padding: 25px;
+}
+
+#about {
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#news {
+  background-color: lightgreen;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+#news-detail {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  overflow: auto;
+  border-radius: 5px;
+  background-color: lightblue;
+  left: 20%;
+  top: 25%;
+  z-index: 500;
+  padding: 5%;
+}
+
+#news-detail > * {
+  margin: 10px;
+}
+
+.news-title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.news-message > p {
+  font-size: 20px;
+  text-indent: 40px;
+}
+
+#news-mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: black;
+  opacity: 50%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 449;
+}
+
+#gacha {
+  background-color: lightsalmon;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+#gacha > * {
+  flex: 100%;
+}
+
+.profile-name {
+  text-align: center;
+}
+
+.profile-header {
+  display: block;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  float: left;
+  clear: both;
+}
+
+.profile-header img {
+  border-radius: 50%;
+}
+
+.profile-intro {
+  width: calc(100% - 200px);
+  margin: 0 10px 10px 0;
+  flex: 100%;
+  font-size: 20px;
+}
+
+.related-info {
+  text-align: center;
+}
+
+.related-info *::before,
+.related-info *::after {
+  content: " | ";
+}
+
+#news h1 {
+  text-align: center;
+}
+
+#news li {
+  margin: 25px;
+  font-size: 20px;
+}
+
+.gacha-panel {
+  border-radius: 10px;
+  min-height: 400px;
+  margin: 10px;
+}
+
+.gacha-buttons {
+  text-align: center;
+}
+
+#gacha-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.gacha-item img {
+  height: 100px;
+  width: auto;
+}
+
+.hidden {
+  opacity: 0 !important;
+}
+
+#gacha-info {
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
+
+#gacha-result {
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
+
+.gacha-item {
+  opacity: 1;
+  transition: opacity 1s, transform 1s;
+}
